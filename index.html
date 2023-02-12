@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container d-flex justify-content-center" style="margin-top: 30vh !important;">
+        <div class="col">
+            <h1 class="text-center">Dice Game</h1>
+            <div class="d-flex justify-content-center">
+                <div id="dice1">
+                    <img id="dice1-image" style="margin: 10px;" width="100" height="100" src="dice0.png">
+                </div>
+                <div id="dice2">
+                    <img id="dice2-image" style="margin: 10px;" width="100" height="100" src="dice0.png">
+                </div>
+            </div>
+            <br>
+            <div class="text-center">
+                <button id="roll-dice" class="btn btn-primary">Roll Dice</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        const dice1Image = document.querySelector("#dice1-image");
+        const dice2Image = document.querySelector("#dice2-image");
+        const rollDiceButton = document.querySelector("#roll-dice");
+
+        rollDiceButton.addEventListener("click", function () {
+            let randomNumber1 = Math.floor(Math.random() * 4);
+            let randomNumber2 = Math.floor(Math.random() * 4);
+            dice1Image.src = `dice${randomNumber1}.png`;
+            dice2Image.src = `dice${randomNumber2}.png`;
+        });
+    </script>
+</body>
+
+</html>
